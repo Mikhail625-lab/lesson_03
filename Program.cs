@@ -74,7 +74,11 @@ namespace _03_Lesson
                     
             }// end of  Task № 1.Написать программу, выводящую элементы двумерного массива по диагонали.
 
-                { // Task № 2.«Телефонный справочник»: создать двумерный массив 5х2, хранящий список телефонных контактов: первый элемент хранит имя контакта, второй — номер телефона/
+
+
+
+
+            { // Task № 2.«Телефонный справочник»: создать двумерный массив 5х2, хранящий список телефонных контактов: первый элемент хранит имя контакта, второй — номер телефона/
                   // block declare init vars
 
                 int row1 = 3; // qty row  
@@ -97,9 +101,7 @@ namespace _03_Lesson
                 Random rnd1 = new Random();
 
                 // block executive
-
-                //Console.WriteLine("arrNameList.Rank   :   " + arrNameList.Rank );
-                //Console.WriteLine("arrNameList.Length :   " + arrNameList.Length );
+                Console.Title = "Test task  for GeekBrainc C# ";
 
                 // add names to pool massive for select random 
                 {
@@ -243,10 +245,38 @@ namespace _03_Lesson
 
             }// end of  Task № 2.«Телефонный справочник»: создать двумерный массив 5х2, хранящий список телефонных контактов: первый элемент хранит имя контакта, второй — номер телефона/
 
-                { // Task № xx
-              // block declare init vars
-              // block executive
-              // end of  Task № xx
+                { // Task № 03
+                  // block declare init vars
+                string revers1 ="";
+                string input1 = Console.ReadLine();
+                if (input1 == "")
+                {
+                    input1 = "Tomorrow Never Dies (1997)";
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("You enter EMPTY value. ");
+                    Console.Write("            Set string input1 :  ");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine(input1);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("");
+                }
+
+                char[] chars = input1.ToCharArray();
+
+                for (int i = chars.Length -1  ; i >= 0; i--)
+                {
+                    revers1 = revers1 + Convert.ToString(chars[i]);
+                }
+                //
+                
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine("See sourse string and result revers:");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("                                     " + input1);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("                                     " + revers1);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                // end of  Task № 03
             }
 
             { // Task № xx
