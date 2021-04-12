@@ -1,22 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "E:\\_projectCSharp\\300_GeekBrains\\03_Lesson\\_VS\\03_Lesson\\03_Lesson.csproj": {}
+    "S:\\_projects\\C#\\03_Lesson\\lesson_03\\03_Lesson.csproj": {}
   },
   "projects": {
-    "E:\\_projectCSharp\\300_GeekBrains\\03_Lesson\\_VS\\03_Lesson\\03_Lesson.csproj": {
+    "S:\\_projects\\C#\\03_Lesson\\lesson_03\\03_Lesson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\_projectCSharp\\300_GeekBrains\\03_Lesson\\_VS\\03_Lesson\\03_Lesson.csproj",
+        "projectUniqueName": "S:\\_projects\\C#\\03_Lesson\\lesson_03\\03_Lesson.csproj",
         "projectName": "03_Lesson",
-        "projectPath": "E:\\_projectCSharp\\300_GeekBrains\\03_Lesson\\_VS\\03_Lesson\\03_Lesson.csproj",
+        "projectPath": "S:\\_projects\\C#\\03_Lesson\\lesson_03\\03_Lesson.csproj",
         "packagesPath": "C:\\Users\\u1\\.nuget\\packages\\",
-        "outputPath": "E:\\_projectCSharp\\300_GeekBrains\\03_Lesson\\_VS\\03_Lesson\\obj\\",
+        "outputPath": "S:\\_projects\\C#\\03_Lesson\\lesson_03\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\u1\\AppData\\Roaming\\NuGet\\NuGet.Config",

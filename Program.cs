@@ -77,26 +77,31 @@ namespace _03_Lesson
                 { // Task № 2.«Телефонный справочник»: создать двумерный массив 5х2, хранящий список телефонных контактов: первый элемент хранит имя контакта, второй — номер телефона/
                   // block declare init vars
 
-                int row1 = 2; // qty row  
+                int row1 = 3; // qty row  
                 int clmn1 = 12;  // qty  columnus 
 
                 int row2 = 2; // qty row  
                 int clmn2 = 5;  // qty  columnus 
 
+                int pos1; // position (in array )
+
                 string firstName1;
                 string telNumber1;
                 string delimetr = " / ";
                 string email1;
+                string stmp;
 
                 string [,] arrNameList   = new string [row1,clmn1];
                 string [,] arrPhoneBook1 = new string [row2, clmn2];
 
                 Random rnd1 = new Random();
- 
+
                 // block executive
 
+                //Console.WriteLine("arrNameList.Rank   :   " + arrNameList.Rank );
+                //Console.WriteLine("arrNameList.Length :   " + arrNameList.Length );
 
-                // add names for select random 
+                // add names to pool massive for select random 
                 {
                     arrNameList[0, 0] = "Бунин";
                     arrNameList[0, 1] = "Лесков";
@@ -111,18 +116,31 @@ namespace _03_Lesson
                     arrNameList[0, 10] = "Чехов";
                     arrNameList[0, 11] = "Волошин";
 
-                    arrNameList[1, 0] = "Михаил";
-                    arrNameList[1, 1] = "Александр";
-                    arrNameList[1, 2] = "Федор";
-                    arrNameList[1, 3] = "Григорий";
-                    arrNameList[1, 4] = "Алексей";
-                    arrNameList[1, 5] = "Николай";
-                    arrNameList[1, 6] = "Антон";
-                    arrNameList[1, 7] = "Иван";
-                    arrNameList[1, 8] = "Пётр";
-                    arrNameList[1, 9] = "Семён";
-                    arrNameList[1, 10] = "Максимилиан";
-                    arrNameList[1, 11] = "Дмитрий";
+                    arrNameList[1, 0] = "Иван";
+                    arrNameList[1, 1] = "Николай";
+                    arrNameList[1, 2] = "Александр";
+                    arrNameList[1, 3] = "Михаил";
+                    arrNameList[1, 4] = "Михаил";
+                    arrNameList[1, 5] = "Федор";
+                    arrNameList[1, 6] = "Алексей";
+                    arrNameList[1, 7] = "Сергей";
+                    arrNameList[1, 8] = "Афанасий";
+                    arrNameList[1, 9] = "Николай ";
+                    arrNameList[1, 10] = "Антон";
+                    arrNameList[1, 11] = "Максимилиан";
+
+                    arrNameList[2, 0] = "Алексеевич";
+                    arrNameList[2, 1] = "Семёнович";
+                    arrNameList[2, 2] = "Сергеевич";
+                    arrNameList[2, 3] = "Юрьевич";
+                    arrNameList[2, 4] = "Афанасьевич";
+                    arrNameList[2, 5] = "Михайлович";
+                    arrNameList[2, 6] = "Константинович";
+                    arrNameList[2, 7] = "Тимофеевич";
+                    arrNameList[2, 8] = "Афанасьевич";
+                    arrNameList[2, 9] = "Степанович";
+                    arrNameList[2, 10] = "Павлович";
+                    arrNameList[2, 11] = "Александрович";
                 }
 
                 for (int i = 0; i < row2; i++)
@@ -132,10 +150,28 @@ namespace _03_Lesson
 
                         Console.WriteLine(" Enter first name:");
                         firstName1 = Console.ReadLine();
-                        if (firstName1 == "")
+                        
+                        if (firstName1 == "") 
                         {
-                            arrPhoneBook1[i, j] = arrNameList[rnd1.Next(arrNameList.Length + 1), 0]
-                                        + " " +   arrNameList[rnd1.Next(arrNameList.Length + 1), 1];
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.WriteLine("You enter EMPTY value. Now generete random name...");
+
+                            pos1 = Convert.ToInt32(rnd1.Next(clmn1));
+                            stmp =Convert.ToString(arrNameList[0, pos1]
+                                + " " + arrNameList[1, pos1]
+                                + " " + arrNameList[2, pos1]
+                                );
+                            arrPhoneBook1[i, j] = stmp;
+
+                            { // Output
+
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.Write("... all right. Create name :");
+                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                Console.WriteLine(arrPhoneBook1[i, j]);
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                            }
+                            pos1 = 0 ; stmp = "";
                         } 
                         else 
                         {
@@ -143,17 +179,64 @@ namespace _03_Lesson
                             firstName1 = "";
                         }
 
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine(" Enter tel number :");
                         telNumber1 = Console.ReadLine();
+
+                        if (telNumber1 == "" | telNumber1.Length<8 )
+                        {
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.WriteLine("You enter EMPTY value. ");
+                            Console.WriteLine("or telephon nuber not correct");
+                            Console.WriteLine(" Now generete random number tel...");
+                            var rnd2 = new Random();
+                            var s = new StringBuilder();
+
+                            for (int k = 0; k < 10  ; k++)
+                            {
+                                telNumber1 = telNumber1 + Convert.ToString ( rnd2.Next(0,10)   ) ;
+                            }
+                        }
+                        telNumber1 = "+7" + telNumber1;
+                        telNumber1 = telNumber1.Insert(2, "(");
+                        telNumber1 = telNumber1.Insert(6, ")");
+                        telNumber1 = telNumber1.Insert(10, "-");
+                        telNumber1 = telNumber1.Insert(13, "-");
+
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.Write("... all right. Create tel : ");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine(telNumber1);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+
                         Console.WriteLine(" Enter e-mail :");
                         email1 = Console.ReadLine();
+                        if (email1 == "")
+                        {
+                            Console.WriteLine("You enter EMPTY value. Now generete random e-mail...");
+                            var rnd2 = new Random();
+                            var s = new StringBuilder();
+
+                            for (int k = 0; k < (Convert.ToInt32((rnd2.Next(5) + 5))); k++)
+                            {
+                                s.Append((char)rnd2.Next('a', 'z'));
+                                email1= (s.ToString()) + "@" + "yopmail" + ".com";
+                            }
+                        }
 
                         arrPhoneBook1[i, j] = telNumber1+ delimetr + email1;
 
-                    }
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.Write("... all right. Create e-mail : ");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine(arrPhoneBook1[i, j]);
+                        Console.ForegroundColor = ConsoleColor.Gray;
 
-                    Console.WriteLine("");
+                        email1 = "";
+                        telNumber1 = "";
+                    }
                 }
+
 
 
 
